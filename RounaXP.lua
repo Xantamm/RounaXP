@@ -854,7 +854,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    .goto The Barrens,51.9,55.4
+    .goto The Barrens,45.7,35.1
     .accept 1486
     .target Nalpak
 step
@@ -864,7 +864,7 @@ step
     .vendor >> sell junk
     .target Kalldan Felmoon
 step
-    >> run RFC make sure you are looting everything possible for quests!
+    >> run WC make sure you are looting everything possible for quests!
     .complete 959,1
     .complete 1487,1
     .complete 1487,2
@@ -896,18 +896,24 @@ step
     .goto The Barrens,63.0,37.2
     .complete 6981,1
     .complete 6981,2
+    .turnin 1094
+    .accept 1095
     .target Sputtervalve
 step
     .goto The Barrens,63.0,37.2 
     .fly Crossroads
     .target Bragok
 step
+    .goto The Barrens,51.99,29.89
+    .home >>Set your Hearthstone to Crossroads
+    .target Innkeeper Boorand Plainswind
+step
     .goto The Barrens,48.2,32.8
     .turnin 6981
     .accept 3369
     .target Falla Sagewind
 step
-    .goto The Barrens,51.9,55.4
+    .goto The Barrens,45.7,35.1
     .turnin 1486
     .target Nalpak
 step
@@ -936,6 +942,7 @@ step
 step
     .goto Thunder Bluff,70.2,30.8
     .turnin 1063
+    >> wait a couple of seconds for rp
     .accept 1064
     .target Magatha Grimtotem
 step
@@ -976,24 +983,34 @@ step
     .goto Silverpine Forest,44.0,41.0
     .accept 516
     .target Shadow Priest Allister
+step 
+    .goto Silverpine Forest,42.8,40.8
+    .turnin 446
+    .accept 448
+    .accept 493
+    .target Apothecary Renferrel
 step
     .goto Silverpine Forest,43.4,40.8
+    .turnin 448
     .accept 1098
-    .target High executor Hadrec
+    .target High executor Hadrec                -- can maybe add in the kill thule quest, but it's a single quest to go through a hyper spawn, and kill a crowded elite, for 2k exp skip if we dont rly need xp
+step
+    .goto Silverpine Forest,44.4,43.0
+    .turnin 92401
+    .target Tabitha Heartweaver
 step   
-    .goto Silverpine Forest, --todo SFK bridge coords  
+    >> run SFK
     .turnin 1098
     .target Deathstalker Vincent
     .complete 1013,1
     .complete 1014,1
-step                            -- todo figure out when to turnin SFK quests is currently -2 inv till we do
-    .goto Silverpine Forest,48.4,78.8 --redo coords when doing
+step   
+    .goto Silverpine Forest,45.4,83.4
     .complete 530,1
+    .unitscan Valdred Moray
 step
-    .goto Silverpine Forest,            --get coords for undead cave
-    .complete 516,1
-    .complete 516,2
-step
+    .goto Silverpine Forest,60.3,74.7
+    >> farm undead for note scrap
     .collect 271343,1
     .target 1974
     .target 1973
@@ -1010,11 +1027,13 @@ step
     .accept 95885
 step
     .complete 95885,1
-    .complete 95885,2
-    .complete 95885,3
     .turnin 95885
 step
-    .goto Silverpine Forest,            --get coords for fork in road b4 hillsbrad
+    .complete 516,1
+    .complete 516,2
+    >> finish killing undead for beren's peril
+step
+    .goto Silverpine Forest,64.2,76.8 
     .complete 95981,1
     .complete 95981,2
 step
@@ -1032,127 +1051,983 @@ step
 RXPGuides.RegisterGuide([[
 #group GMA
 #name Hillsbrad1  
+#next Barrens3
+
+
+step                                        --todo route picking up? maybe just doesn't matter
+    .goto Hillsbrad Foothills,61.4,19.2
+    .turnin 1065
+    .turnin 493
+    .accept 1066
+    .target Apothecary Lydon
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 494
+    .accept 527
+    .target High Executor Darthalia
+step
+    .goto Hillsbrad Foothills,62.5,19.7
+    .accept 567
+    >> accept Dangerous! from a wanted posted
+step 
+    .goto Hillsbrad Foothills,63.2,20.6
+    .accept 498
+    .target Krusk
+step
+    .goto Hillsbrad Foothills,62.6,20.7
+    .accept 549
+    >> accept Wanted: Syndicate Personnel from a wanted poster
+step
+    .goto Hillsbrad Foothills,34.0,36.6
+    .complete 527,1
+    .complete 527,2
+    .complete 527,3
+    .complete 527,4
+    .unitscan Farmer Ray
+    .unitscan Farmer Getz
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 527
+    .accept 528
+    .target High Executor Darthalia
+step
+    .goto Hillsbrad Foothills,62.0,19.8
+    .accept 546
+    .target Deathguard Samas
+step
+    .goto Hillsbrad Foothills,    --get coords of entrance to syndicate keep        -- add unitscan of jailors
+    .complete 549,1
+    .complete 549,2
+    .complete 498,1
+    .complete 498,2
+    .complete 1066,1
+    .unitscan Jailor Marlgen
+    .unitscan Jailor Eston
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 549
+    .target High Executor Darthalia
+step
+    .goto Hillsbrad Foothills,63.2,20.6
+    .turnin 498
+    .target Krusk
+step
+    .goto Hillsbrad Foothills,61.4,19.2
+    .turnin 1066
+    >>wait a sec for rp
+    .accept 1067
+    .target Apothecary Lydon
+step
+    .goto Hillsbrad Foothills,60.2,18.6
+    .fly Sepulcher
+    .target Zarise
+step
+    .goto Silverpine Forest,44.0,41.0                      
+    .turnin 95981
+    .turnin 516
+    .target Shadow Priest Allister
+step
+    .goto Silverpine Forest,44.2,39.8
+    .turnin 1014
+    .target Dalar Dawnweaver
+step
+    .goto Silverpine Forest,45.6,42.4
+    .fly Undercity
+    .target Karos Razok
+step
+    .goto Undercity,62.0,43.0
+    .turnin 530
+    .target Raleigh Andrean
+step
+    .goto Undercity,53.6,54.0
+    .turnin 1013
+    .target Keeper Bel'dugur
+
+]])
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name Barrens3
 #next Stonetalon2
 
 
+step
+    .hs >>hearth to xr
+    .goto The Barrens,51.5,30.34
+    .fly Camp Taurajo                   -- maybe set hearth here as well
+    .target Devrak
+step
+    .goto The Barrens,44.6,59.2
+    .accept 878
+    .target Mangletooth
+step    
+    >> keep an eye out for Lakota'mani (grey kodo) kill him if you see him
+    .complete 878,1
+    .complete 878,2
+    .complete 878,3
+step
+    .itemcount 5099,1
+    .use 5099
+    .accept 883
+step
+    .goto The Barrens,44.8,59.0
+    .turnin -883,1
+    .target Jorn Skyseer
+step
+    .goto The Barrens,44.6,59.2
+    .turnin 878
+    .accept 5052
+    .turnin 5052
+step
+    .itemcount 5075,10
+    .accept 889
+    .turnin 889
+step
+    .accept 879
+    .target Mangletooth
+step
+    .accept 97250
+    .target Grunt Logmar
+step
+    .goto The Barrens,45.6,59.0
+    .home >>set hearth
+    .target Innkeeper Byula
+step
+    >> look out for Owatanka (blue thunder kodo) kill him if you see him        --accept and turnin if you ahve item
+    .goto The Barrens,47.8,77.6
+    .accept 98093
+    .target Sulhasa
+step
+    .goto The Barrens,48.8,77.6
+    .complete 97250,1
+    .complete 97250,2
+step
+    .goto The Barrens,46.1,75.6
+    >> follow road south looking for patrolling quest giver
+    .accept 843
+    .target Gann Stonespire
+step
+    .goto The Barrens,44.0,81.6
+    >>Kuz will path around the area 
+    .complete 879,1
+    .unitscan Kuz
+step
+    .goto The Barrens,40.0,80.4
+    .complete 879,3
+step
+    .goto The Barrens,43.6,83.6
+    .complete 879,2
+step
+    .goto The Barrens,46.3,85.0
+    .complete 843,1
+    .complete 843,2
+    .complete 843,3
+    >> focus on foreman's
+step
+    >> find gann patrolling the road again
+    .turnin 843
+    .target Gann Stonespire
+step
+    --maybe add goto
+    .complete 98093,1
+    .complete 98093,2
+step
+    .goto The Barrens,47.8,77.6
+    .turnin 98093
+    .target Sulhasa
+step
+    .itemcount 5102,1
+    .use 5102
+    .accept 884
+step
+    .hs >> hearth if off cd
+    .goto The Barrens,44.6,59.2
+    .turnin 97250
+    .target Grunt Logmar
+step
+    .turnin -884,1
+    .target Jorn Skyseer
+step
+    .turnin 879
+    .accept 906
+    .target Mangletooth
+step
+    .itemcount 5075,10
+    .accept 889
+    .turnin 889
+step
+    .goto The Barrens,44.4,59.0
+    .fly Crossroads
+    .target Omusa Thunderhorn   
+step -- turnin from within 906
+    .goto The Barrens,51.4,30.8
+    .turnin 906
+    .accept 6541
+    .target Thork
+]])
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name Stonetalon2
+#next Ashenvale1
+
+step
+    .goto The Barrens,51.5,30.34
+    .fly Stonetalon Mountains
+    .target Devrak   
+step
+    .goto Stonetalon Mountains,46.0,60.4
+    .accept 1087
+    .target Braelyn Firehand
+step
+    .goto Stonetalon Mountains,47.2,61.0
+    .accept 86576
+    .accept 6282
+    .accept 5881
+    .target Maggran Earthbinder
+step
+    .goto Stonetalon Mountains,48.2,42.2
+    .complete 97538,1
+    >> plentiful spawns in the water
+step
+    .goto Stonetalon Mountains,36.3,12.5
+    .complete 1087,1
+    .complete 1087,2
+    .complete 1087,3
+step
+    .goto Stonetalon Mountains,34.8,58.4
+    .complete 6282,1
+    .complete 6282,2
+    .complete 6282,3
+    .complete 6282,4
+step
+    .goto Stonetalon Mountains,46.0,60.4
+    .turnin 1087
+    .accept 1088
+    .target Braelyn Firehand
+step
+    .goto Stonetalon Mountains,47.2,61.0
+    .turnin 6282
+    .accept 6283
+    .target Maggran Earthbinder
+step
+    .goto Stonetalon Mountains,31.0,62.0
+    .unitscan Bloodfury Ripper
+    >>long respawn, can skip if everyone finishes loot quest quick
+    .complete 6283,1
+    .complete 86576,1
+step
+    .goto Stonetalon Mountains,47.2,64.0
+    .turnin 86576
+    .target Mor'rogal
+step
+    .goto Stonetalon Mountains,47.2,61.0
+    .turnin 6283
+    .target Maggran Earthbinder
+step
+    .goto Stonetalon Mountains,45.2,59.8
+    .fly Crossroads
+    .target Tharm
+]])
+
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name Ashenvale+BFD   -- left side first?
+#next TK1
+
+step
+    .goto The Barrens,48.0,5.4 
+    .turnin 6541
+    .accept 6543
+    .target Kadrak
+step
+    .goto Ashenvale,79.0,55.4
+    .use 16783
+    >> use bundle of reports
+    .accept 6546
+    .turnin 6546
+    .target Warsong Outrider
+    >> the Outrider patrols the road east to Azshara
+step
+    .goto Ashenvale,73.6,61.6
+    .turnin 742
+    .accept 6383
+    .turnin 6383
+    .target Senani Thunderheart
+step
+    .goto Ashenvale,74.0,60.6
+    .home >>set hearth
+    .target Innkeeper Kaylisk
+step
+    .goto Ashenvale,73.6,60.0
+    .accept 25
+    .target Mastok Wrilehiss
+step
+    .goto Ashenvale,73.2,61.6
+    .fp Splintertree Post
+    .target Vhulgra
+step
+    .goto Ashenvale,71.0,68.2
+    .accept 6503
+    .target Kuray'bin
+step
+    .goto Ashenvale,71.0,68.2
+    .accept 6547
+    .turnin 6547
+    .target Warsong Scout
+step
+    .goto Ashenvale,49.0,69.8 --update to gazebo coords
+    .complete 25,1
+    .complete 25,2
+    >> kill and loot Tideress
+    .collect 16408,1,1918,1   -- test if works -- needs to stay on step till tideress is looted
+step
+    .use 16408
+    .accept 1918
+step
+    .goto Ashenvale,12.2,33.8
+    .fp Zoram'Gar
+    .target Andruk
+step
+    .goto Ashenvale,12.2,34.2
+    .accept 6545
+    .turnin 6545
+step
+    .goto Ashenvale,11.6,34.8
+    .accept 6462
+    .target Mitsuwa
+step
+    .goto Ashenvale,11.8,34.4
+    .accept 216
+    .target Karang Amakkar
+step
+    .goto Ashenvale,11.6,34.2
+    .turnin 6562
+    .accept 6563
+    .accept 6921
+    .target Je'neu Sancrea
+step
+    .goto Ashenvale,41.4,34.4
+    >> loot as many troll charms as possible while waiting for escort
+    .accept 6482
+    .complete 6482
+step
+    .complete 6462,1
+    .complete 216,1
+    .complete 216,2
+step
+    .goto Ashenvale,11.8,34.4
+    .turnin 216
+    .accept 6621
+    .target Karang Amakkar
+step
+    .goto Ashenvale,11.6,34.8
+    .turnin 6462
+    .target Mitsuwa
+step
+    .goto Ashenvale,14.3,15.3
+    .complete 6563,1
+    .collect 16790,1
+    .unitscan Blackfathom Tide Priestess
+step
+    .goto Ashenvale,11.6,34.2
+    .use 16790
+    .accept 6564
+    .turnin 6564
+    .turnin 6563
+    .accept 6565
+    .target Je'neu Sancrea
+step
+    >>run BFD
+    .accept 6561
+    .target Argent Guard Thaelrid
+    .complete 6561,1
+    .complete 6565,1
+    >> Baron Aquanis spawns when looting fathom core
+    .complete 6921,1
+    >> make sure to loot quest item off of Baron Aquanis
+    .collect 16782,1
+    .use 16782
+    .accept 6922
+step
+    .hs >> hearth to splintertree
+    .goto Ashenvale,73.6,60.0
+    .turnin 25
+    .turnin 1918
+    .accept 824
+    .target Mastok Wrilehiss
+step
+    .goto Ashenvale,74.0,60.8
+    .turnin 6482
+    .target Yama Snowhoof
+step
+    .goto Ashenvale,62.0,51.2
+    .complete 1088,1
+    .unitscan Ordanus
+step
+    .collect 5867,1
+step
+    .collect 16304,1
+    .unitscan Shadumbra
+step
+    .goto Ashenvale,40.4,61.4
+    .accept 98251
+    .target Va'xug Firefure
+step
+    .complete 98251,1
+    .complete 98251,2
+    .collect 16303,1
+    .unitscan 12678
+step
+    .goto Ashenvale,40.4,61.4
+    .turnin 98251
+    .accept 98252
+    .target Va'xug Firefure
+step
+    .goto Ashenvale,42.2,56.9 --the road north
+    .complete 98252,1
+    .turnin 98252
+    .target Eye of Kilrogg
+step
+    .goto Ashenvale, --banner place quest
+    .complete 6621,1
+step
+    .goto Ashenvale, --moonwell
+    .complete 1195,1
+step
+    .goto The Barrens,48.0,5.4
+    .turnin 6543
+    .targat Kadrak
+step
+    .goto Ashenvale,75.1,71.0
+    .complete 6503,1
+    .collect 16305
+    .unitscan Sharptalon
+step
+    .goto Ashenvale,71.0,68.2
+    .turnin 6503
+    .target Kuray'bin
+step
+    .goto Ashenvale,73.6,61.4
+    .use 16304
+    .accept 24
+    .use 16303
+    .accept 23
+    .use 16305
+    .accept 2
+    .turnin 2
+    .turnin 23
+    .turnin 24
+    .accept 247
+    .turnin 247
+    .target Senani Thunderheart
+step
+    .goto Ashenvale,73.2,61.6
+    .fly Zoram'Gar
+    .target Vhulgra   
+step
+    .goto Ashenvale,11.8,34.4
+    .turnin 6621
+    .target Karang Amakkar
+step
+    .goto Ashenvale,11.6,34.2
+    .turnin 6922
+    .turnin 824
+    .turnin 6565
+    .turnin 6921
+    .target Je'neu Sancrea
+step
+    .goto Ashenvale,12.2,33.8
+    .fly Thunder Bluff
+    .target Andruk
+step
+    .goto Thunder Bluff,54.6,51.2
+    .turnin 1195
+    .accept 1196
+    .target Zangen Stonehoof
+step
+    .goto Thunder Bluff,54.2,47.4
+    .turnin 97538
+    .target Tah Winterhoof
+step
+    .goto Thunder Bluff,70.8,33.8
+    .turnin 6561
+    .target Bashana Runetotem
+step
+    .goto Thunder Bluff,23.0,21.0
+    .turnin 1067
+    >> wait for rp
+    .accept 1086
+    .target Apothecary Zamah
+step
+    .goto Thunder Bluff,46.8,50.0
+    .fly Camp Taurajo
+    .target Tal    
+]])
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name TK1
+#next Stonetalon3
+
+step
+    .itemcount 5075,10
+    .accept 889
+    .turnin 889
+    .target Mangletooth
+step
+    .goto Thousand Needles,31.8,21.6
+    .turnin 5881
+    .target Grish Longrunner
+step
+    .goto Thousand Needles,32.2,22.6
+    .accept 4542
+    .target Brave Moonhorn
+step
+    .goto Thousand Needles,45.0,49.2
+    .fp Freewind Post
+    .target Nyse
+step
+    .goto Thousand Needles,45.6,50.6
+    .turnin 4542
+    .accept 4841
+    .target Cliffwatcher Longhorn
+step
+    .goto Thousand Needles,46.0,51.6
+    .home >>set hearth
+    .target Innkeeper Abeqwa
+step
+    .goto Thousand Needles,46.0,51.6
+    .turnin 1196
+    .accept 1197
+    .target Rau Cliffrunner 
+step
+    .goto Thousand Needles,46.0,50.8
+    .accept 5147
+    >> accept quest from wanted poster
+step
+    .goto Thousand Needles,53.8,41.6
+    .accept 1149
+    .target Dorn Plainstalker
+step
+    .complete 1149,1
+    >> walk the plank
+step
+    .turnin 1149   
+    .accept 1150
+    .target Dorn Plainstalker
+step
+    .goto Thousand Needles,42.0,31.6
+    .complete 1197,1
+    >> can leave cave after aquiring the Cloven Hoof
+    .complete 4841,1
+    .complete 4841,2
+    .complete 4841,3
+step
+    .goto Thousand Needles,46.0,51.6
+    .turnin 1197
+    .target Rau Cliffrunner
+step
+    .accept 98070
+    .accept 98069
+    .target Jandia
+step
+    .goto Thousand Needles,45.6,50.6
+    .turnin 4841
+    .accept 5064
+    .target Cliffwatcher Longhorn
+step
+    .goto Thousand Needles,31.8,32.6
+    >> look for a totem pole on the side of the main road, follow the path up
+    .complete 5064,1
+step
+    .goto Thousand Needles,33.8,39.9
+    .complete 5064,2
+step
+    .goto Thousand Needles,39.3,41.5
+    .complete 5064,3
+step
+    .goto Thousand Needles,38.2,27.0
+    .unitscan Arnak Grimtotem
+    .complete 5147,1
+    .accept 4904
+    .target Lakota Windsong
+step
+    .goto Thousand Needles,27.3,51.1
+    .complete 98070,1
+    .complete 98070,1
+    .complete 98070,1
+    .complete 98069,1
+    .complete 1150,1
+step
+    .goto Thousand Needles, 46.0,51.4
+    .turnin 98069
+    .turnin 98070
+    .target Jandia
+step
+    .turnin 4904
+    .target Thalia Amberhide
+step
+    .goto Thousand Needles,45.6,50.6
+    .turnin 5147
+    .turnin 5064
+    .target Cliffwatcher Longhorn
+step
+    .goto Thousand Needles,53.8,41.6
+    .turnin 1150
+    .accept 1151
+    .target Dorn Plainstalker
+step
+    .goto Thousand Needles,25.8,41.6
+    >>Rok'alim spawns towards feralas on the south of TK
+    .complete 1151,1
+    .unitscan Rok'Alim the Pounder
+    >> also keep an eye out for steelsnap who patrols around west side of TK
+    .complete 1131,1
+    .unitscan Steelsnap
+step
+    .goto Thousand Needles,21.4,32.4
+    .accept 5151
+    .target Wizlo Bearingshiner
+step
+    .goto Thousand Needles,23.0,23.4
+    .complete 5151,1
+step
+    .goto Thousand Needles,21.4,32.4
+    .turnin 5151
+    .target Wizlo Bearingshiner
+step
+    .hs >> hearth
+    .goto Thousand Needles,53.8,41.6
+    .turnin 1151
+    .accept 1152
+    .target Dorn Plainstalker
+step
+    .goto Thousand Needles,45.0,49.2
+    .fly Stonetalon Mountains
+    .target Nyse    
+]])
+
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name Stonetalon3
+#next ESW
+
+step
+    .goto Stonetalon Mountains,46.0,60.4
+    .turnin 1088
+    .target Braelyn Firehand
+step
+    .goto Stonetalon Mountains,59.0,62.4
+    .turnin 1095
+    .accept 1096
+    .target Ziz Fizziks
+step
+    .goto Stonetalon Mountains,
+    .complete 1068,2
+    .unitscan xt:9
+step
+    .goto Stonetalon Mountains,
+    .complete 1068,1
+    .unitscan xt:4
+step
+    .goto Stonetalon Mounatins, --poison barrel
+    .complete 1086,1
+step
+    .goto Stonetalon Mountains,78.6,45.6
+    .turnin 1152
+    .accept 1154
+    .target Braug Dimspirit
+step
+    .goto Ashenvale,75.5,74.5
+    >> Inside the cave
+    .complete 1154,1
+step
+    .goto Stonetalon Mountains,78.6,45.6
+    .turnin 1154
+    .accept 6627
+    .target Braug Dimspirit
+step
+    .complete 6627,1
+    >> Neltharion if its a static question, about who became deathwing
+    .turnin 6627
+    .accept 1159
+    .target Braug Dimspirit
+step
+    .goto Stonetalon Mountains,63.6,39.6
+    .complete 1096,1   
+    >>die after take rez sickness to travel to quest giver
+step
+    .goto Stonetalon Mountains,59.0,62.4
+    .accept 1096
+    .target Ziz Fizziks
+step
+    .goto The Barrens,35.2,27.8
+    .turnin 1068
+    .target Seereth Stonebreak
+step
+    .goto The Barrens,51.5,30.34
+    .fly Orgrimmar
+    .target Devrak
+step
+    .goto Orgrimmar,57.4,53.4
+    .accept 95697
+    .target Borstan
+]])
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name ESW
+#next Hillsbrad2
+
+
+step
+    >>take zepellin to UC
+    .goto Undercity,63.6,48.6       
+    .fly Tarren Mill
+    .target Michael Garrett
+step
+    .goto Hillsbrad Foothills,61.4,19.2
+    .accept 509
+    .target Apothecary Lydon
+step
+    .goto Hillsbrad Foothills,62.6,19.0
+    .home >> set hearth
+    .target Innkeeper Shay
+step
+    .goto Arathi Highlands,73.0,32.6
+    .fp Hammerfall
+    .target Urda
+step
+    .goto Arathi Highlands,74.4,35.6
+    .accept 95663
+    .target Zaruk
+step
+    .goto Wetlands,51.4,59.2
+    .turnin 95663
+    .accept 95682
+    .target Deathstalker Agent
+step
+    >>RUN ESW
+    .complete 95697,1
+    .complete 95682,1
+    .complete 95682,2
+    .complete 95682,3
+    .collect 270866,1
+    .use 270866
+    .accept 95664
+step
+    .goto Loch Modan,49.5,12.8
+    .turnin 79974
+    .accept 79975
+    >> run up thru the mountain pass to Loch modan and jump off the east side of the dam 
+step
+    .hs >>hearth
+    .goto Arathi Highlands,22.5,24.2
+    .turnin 79975
+    .accept 79976
+    .turnin 79976
+    >> you can get onto the wall by jumping on a kart from the hillsbrad side north of the quest turn in
+]])
 
 
 
 
+RXPGuides.RegisterGuide([[
+#group GMA
+#name Hillsbrad2
+#next RFK
 
 
-                            --todo go thru guide and move every >> text display to its own line
+-- should go and do ESW first to get sleeping bag
+--decide if we wanna quest here till elite, prob have to so we can hit lvl 30 to grab guano quest from uc and then head to RFK 
+step 
+    .goto Hillsbrad Foothills,35.2,47.6
+    .complete 528,1
+    >> kill any human you see for skulls
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 528
+    .accept 529
+    .accept 98094
+    .target High Executor Darthalia
+step
+    .goto Hillsbrad Foothills,64.0,53.8
+    .turnin 98094
+    .accept 98095
+    .target Deathstalker Masoj
+step
+    .goto Hillsbrad Foothills,65.1,59.9
+    .complete 509,1
+step
+    .goto Hillsbrad Foothills, --add valuable vantages coords west
+    .complete 98095,1
+step
+    .goto Hillsbrad Foothills,32.0,48.0
+    .complete 529,1
+    .complete 529,2
+    .complete 529,3
+step
+    .goto Hillsbrad Foothills,61.4,19.2
+    .turnin 509
+    .accept 513
+    .target Apothecary Lydon
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 529
+    .accept 532
+    .target High Executor Darthalia
+step
+    .goto Hillsbrad Foothills,29.4,42.8
+    .complete 532,1
+    .complete 532,2
+    .complete 532,3
+    .complete 532,4
+    .complete 567,1
+    .complete 567,2
+    .complete 567,4
+step
+    .goto Hillsbrad Foothills,64.0,53.8
+    .turnin 98095
+    .target Deathstalker Masoj
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 532
+    .accept 539
+    .target High Executor Darthalia   
+step
+    .goto Hillsbrad Foothills,31.0,56.2
+    .complete 539,1
+    .complete 539,2
+    .complete 546,1
+    .complete 567,1
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 539
+    .turnin 567
+    .accept 541
+    .target High Executor Darthalia   
+step
+    .goto Hillsbrad Foothills,62.0,19.8
+    .turnin 546
+    .target Deathguard Samsa
+step
+    .goto Hillsbrad Foothills,62.6,20.2
+    .accept 547
+    .target Deathguard Humbert
+step
+    .goto Hillsbrad Foothills, --add valuable vantages coords north
+    .complete 98095,2
+step
+    .goto Hillsbrad Foothills, --add valuable vantages coords south
+    .complete 98095,3
+step
+    .goto Hillsbrad Foothills,72.0,80.8
+    .complete 547,1
+    .complete 541,1
+    .complete 541,2
+    .complete 541,3
+    .complete 541,4
+step
+    .goto Hillsbrad Foothills,62.6,20.2
+    .turnin 547
+    .target Deathguard Humbert
+step
+    .goto Hillsbrad Foothills,62.2,20.2
+    .turnin 541
+    .accept 550
+    .target High Executor Darthalia 
+step
+    .goto Hillsbrad Foothills,60.2,18.6
+    .fly Undercity
+    .target Zarise
+step -- need to be lvl 30 turnin quests and pickup guano    
+    .goto Undercity,57.8,65.0
+    .turnin 1159
+    .accept 1160
+    .target Parqual Fintallas
+step
+    .goto Undercity,56.2,92.6
+    .turnin 550
+    .target Varimathras
+step
+    .goto Undercity,48.4,69.4
+    .turnin 513
+    .accept 1109
+    .target Master Apothecary Faranell
+]])
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name RFK
+#next COD?/STV
+
+-- zep to org
+    --turn in ESW org quest
+--fly to TB
+    --turn in flying machine airport
+    --turn in steelsnap
+    --turnin ESW quests
+    --do northeast quests
+    --pickup RFK quest
+--fly to ratcher pick up rfk quest
+--fly to camp taurajo and run to RFK
+--do RFK
+
+
+--RFK -> STV or City of Dalaran or SM GY/Lib run
+
+--COD -               33
+--SM gy/lib -         34
+-- ULD                44
+--zf
+
+--stonetalon
+    -- pick up ESW quest from org at the end
+
+--Hillsbrad2 
+    --turn in https://www.wowhead.com/forever/quest=1159/test-of-lore at the beginning
+    -- set hearth in tarren mill
+    
+--ESW
+    --complete loch modan sleeping bag quest then hearth to end after dungeon
+
+--RFK
+    --research
+        --step
+        .goto Undercity,48.4,69.4
+        .accept 1109
+        .target Master Apothecary Faranell --requires lvl 30 to pick up
+
+--COD
+    --research
+
+--STV
+    take boat from ratchet to booty bay accept relevant quests then fly to grom gol
+
+-- SM
+    -- test of lore have
+    -- all end boss quest picked up from varimathras in uc req lvl 33
+    -- hearts of zeal follow up to going going guano
+    -- quest drop in gy
+    --compendium of the fallen picked up in TB pick it up when turning in ESW
+
+-- thousand needles2?         
+                            -- quest from barrens for silithid stuff in shimmering expanse, req lvl 29 might be a skip
 
 --TODO
+--todo go thru guide and move every >> text display to its own line
+-- hillsbrad2   after tk1
 
--- hilsbrad                             -- level 20 eastside humans     --24-28 for farm stuff?
-                                        -- do first 2 farm quests to unlock skull quest after first and fire setting quest after 2nd
-                                        -- lvl 24 for elixir of agony, surrounded by 27-28 casters/prob do it with elite dwarfs
-                                        -- if we can hit 24 for elixir of agony while here do it and 2nd battle for hillsbrad(unlikely)
-                                            --otherwise do 1 battle for hillsbrad accept skull quest and do right side human quests
-
---hand in sfk
-
--- hearth back to kalimdor
--- Stonetalon 2 for sure b4 Ashenvale, need to do cenarius legacy for orandus in Ashenvale
--- bfd prequests
-
---bfd
---hand in bfd
-
--- more stonetalon          around lvl 26 mobs for harpies i think
-                            -- mirkweed quest form tb could be good req lvl 20 https://www.wowhead.com/forever/quest=97538/pigments-for-paints
-                            -- def do cenarius legacy
-
-
--- south barrens            around lvl 25 mobs
--- ashenvale? could do stonetalon logging into Ashenvale
-                -- def not Satyr horns
-                --def do ashenvale hunt and 3 named mobs, from camp taurajo if efficient pathing otherwise from org or tb
-                -- do https://www.wowhead.com/forever/quest=98251/never-coming-back and follow up
-                -- do cenarius' legacy in stonetalon for ordanus head follow up
-                -- todo test furbolg escort https://www.wowhead.com/forever/quest=6482/freedom-to-ruul
-                -- tideress is 1 min respawn
-                -- respawn on ashenvale hunt mobs is quick ~1 min
-                    --shadumbra
-                    --sharptalon
-                    --Ursangous
-                -- todo check if this escort flags you https://www.wowhead.com/forever/quest=6544/toreks-assault and if its time efficient
-                -- todo check https://www.wowhead.com/forever/quest=6641/vorsha-the-lasher#comments quest is the devil ~8min respawn once taken,
-                -- check if https://www.wowhead.com/forever/quest=6621/king-of-the-foulweald is a follow up to  https://www.wowhead.com/forever/quest=216/between-a-rock-and-a-thistlefur it is
-                -- maybe check an ah but prob have to skip on launch https://www.wowhead.com/forever/quest=6504/the-lost-pages maybe 1 person can do? if we get lucky with pages
-
-
--- thousand needles         prob be lvl 25 before thousand needles,(some reasons to be 27 or close to it) pick up breadcrumb to the lift in stonetalon
-                            -- ignore alien egg
-                            -- grimtotem spying order is 3 -> 2 -> 1 static locations
-                            -- grimtotem escort https://www.wowhead.com/forever/quest=4904/free-at-last   -- i remember having to kill a named mob near escort start/spawn for another quest
-                                -- said named mob https://www.wowhead.com/forever/quest=5147/wanted-arnak-grimtotem   -- def need to be lvl 25 before going TK
-
-                            -- wyverns are 28-29 quest to escort thru and quest to loot eggs around prob a skip
-                            -- new harpy quests at lvl 27 https://www.wowhead.com/forever/quest=98069/stolen-freewind-supplies
-                                                        --https://www.wowhead.com/forever/quest=98070/stop-the-screeching
-
-                                                        -- quest from barrens for bug stuff in shimmering expanse, req lvl 29
-                    
 --prep for rfk
 --rfk
 -- hilsbrad rd 2/alterac/arathi? prob not arathi
 --stv?
 -- prepping for SM GY LIB
 
-
-
--- work got erased sadge
--- maybe lots to redo anyways with dungeon quest xp nerf
-
-
--- from now on comment what quest the id is for ability to understand where in the guide i am so i can add or change quests/order
--- get to running bfd and then see what lvl / xp is at like
-
---route
-
---barrens razormane,chens,forgotten pools chain,pirates, first 1 or 2 kolkar
-
---rfc
-
---barrens v2    turtles,finish kolkar,northwatch,double raptors,mankrik wife, sleeping bag chain start tb turnin/pickup for dungeon quests
-
--- UC/sepulcher  skinning camp kill quest,dead fields chain,ring to brill chain, border crossing start, pick up ROL quests, prompt potion runner
-
--- turn in ROL UC quests, skinning camp ROL quest, zep to westfall for sleeping bag,
-
--- could do WC first to utilize gear upgrades in stonetalon
--- stonetalon, then WC, turnin WC Ratchet -> hill -> WC -> TB
-
--- do first farmer quest before keep quests so you get skull quest unlocked and can start looting them
--- south silverpine/hillsbrad  include blood of innocents -- OTT is not a vendor/repair --getz spawns in barn with 2 farmers, ray spawns in or outside house, long respawn timers
--- all farm quests are complete dogshit with competition
--- could maybe do beginning elixir quests for 1 or 2 people while we run back and forth for farm quests
--- add in https://www.wowhead.com/forever/quest=98094/scout-support easy to do quick in grp -- todo test how far away party members can be  --has a prereq, 2nd battle for hillsbrad
--- elixir of Agony just popped up with no prereq if it happens do it
-
-
-
--- SFK could do before south silverpine/hillsbrad
-
--- pre BFD
-
--- BFD
-
---see where exp is at
-
--- could do left side hillsbrad, some stuff in south barrens, left side stonetalon, some ashenvale left side furbolgs,    need lvl 24 before thousand needles for sure maybe more?
--- lvl wise is ashenvale furbolgs(22-24 i think), south barrens(~24/25), left side hillsbrad(24-28), left side stonetalon(~28), right side elite hillsbrad(~30)
-
-
--- COD dungeon quests
+-- COD dungeon quests, so far seen
     --Source of power, UC Alch area
     --The Grave Knight, Tarren Mill
-
-
---debuff for recieving tent rested xp ticks off offline, doesn't stack if you already have rested thank blizz
-
--- todo add in banking of quest items if efficient to unbank later to optimize bag space?
-
 ]])

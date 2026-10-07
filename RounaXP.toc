@@ -1,6 +1,6 @@
 ## Interface: 16001
-## Title: Cody's Forever Guides
-## Author: Cody
+## Title: RounaXP
+## Author: Rouna
 ## Dependencies: RXPGuides
 
 RounaXP.lua
