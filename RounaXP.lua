@@ -1,10 +1,7 @@
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Barrens1
-#next RFC 
-
-
-                                                                                --todo add steps instructing all classes to train for now have to manually remember whenever in major city
+#name 11-13 Barrens1
+#next 13-14 RFC 
 step 
     .goto The Barrens,52.26,31.93
     .accept 870
@@ -13,7 +10,6 @@ step
     .goto The Barrens,51.93,30.32
     .accept 869 
     .target Gazrog
--- set hearth i guess .home has to be accompanied by >>text, throws lua errors if not
 step
     .goto The Barrens,51.99,29.89
     .home >>Set your Hearthstone to Crossroads
@@ -29,19 +25,10 @@ step
     .fp The Crossroads
     .target Devrak
 step
-    .goto The Barrens,51.46,30.16           --todo add text notes reminding players to pick fungal spores if they see them and turn in/abandon later when we're no longer near pools
+    .goto The Barrens,51.46,30.16
     .accept 1492
     .accept 848
     .target Apothecary Helbrim
-step << Hunter                              
-    .goto The Barrens,51.6,30.0
-    .collect 2515,2000
-    -- .buy "Buy arrows",2515,2000      --cannot get autobuy to work
-    .target Barg
-step 
-    .goto The Barrens,51.21,29.05
-    .vendor >>vendor trash and repair
-    .target Jahan Hawkwing
 step
     .goto The Barrens,45.4,28.4
     .accept 850
@@ -75,7 +62,7 @@ step
     .target Tonga Runetotem    
 step
     .goto The Barrens,45.4,28.4
-    .turnin -851,1                  -- maybe change syntax so more readable, syntax doesn't appear on rxp site/doc but it works(.turnin -Questid,1) turns in Questid if its complete, skips step if not
+    .turnin -851,1                 
     .target Regthar Deathgate
 step
     .goto The Barrens,55.7,27.3
@@ -83,7 +70,7 @@ step
     .complete 871,2
     .complete 871,3
     .collect 4926 
-    >> one min respawn kill razormane while waiting for everyone to grab
+    >> one min respawn kill razormane while waiting for 2 people to grab, can pick up going to next quest
     .accept 819
     .use 4926
 step
@@ -91,25 +78,14 @@ step
     .turnin 871
     .accept 872
     .target Thork
-step << !Hunter
-    .goto The Barrens,52.62,29.84
-    .vendor >>vendor trash
-    .target Zargh
-step << Hunter                              
-    .goto The Barrens,51.6,30.0
-    .vendor >> buy arrows sell junk
-    .collect 2515,2000 
-    -- .buy "Buy arrows",2515,2000      
-    .target Barg
 step
     .goto The Barrens,58.8,27.6               
     .complete 5041,1 
-    >>focus on grabbing supplies kills will come
+    >>focus on grabbing supplies, and getting Kreenig tag kills will come
     .unitscan Kreenig Snarlsnout
     .complete 872,1
     .complete 872,2
     .complete 872,3
-
 step
     .hs >> hearth to crossroads
     .goto The Barrens,51.5,30.87   
@@ -176,9 +152,8 @@ step << Tauren
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name RFC
-#next Barrens2
-
+#name 13-14 RFC
+#next 14-16 Barrens2
 step  
     .goto Orgrimmar,55.6,72.0
     .accept 97246
@@ -186,7 +161,7 @@ step
 step
     .goto Orgrimmar,54.6,68.0
     .vendor
-    >> buy milk for rfc is you use mana
+    >> buy milk for rfc if you use mana
     .target Barkeep Morag
 step
     .goto Orgrimmar,57.4,53.4
@@ -198,7 +173,7 @@ step
     .accept 97242
     .target Kor'geld
 step
-    .goto Orgrimmar,68.37,31.45                 -- hunter warrior train             -- train weapon skills from org should have enough silver for all
+    .goto Orgrimmar,68.37,31.45         
     .complete 97242,1
     .complete 97242,2
 step
@@ -229,8 +204,8 @@ step
     .target Thra
 step
     .goto Orgrimmar,32.0,37.8                      
-    .accept 5726                               -- shaman train b4 accepting
-    .target Thrall                              -- mage priest train after accepting
+    .accept 5726  
+    .target Thrall  
 step
     .goto Durotar,54.94,9.61
     .complete 5726,1 >> not a shared drop have to farm 5
@@ -242,7 +217,7 @@ step
 step
     .goto 1454/1,-4376.29,1802.43
     .accept 5761
-    .complete 5727,1 >> go through all dialog options with Neeru Fireblade                      -- warlock rogue train
+    .complete 5727,1 >> go through all dialog options with Neeru Fireblade     
     .target Neeru Fireblade
 step
     .goto Orgrimmar,32.0,37.8
@@ -251,14 +226,14 @@ step
     .target Thrall
 step
     >> Run RFC
-    .turnin 5722        --satchel
-    .accept 5724        --satchel followup
+    .turnin 5722       
+    .accept 5724        
     .complete 5723,1
-    .complete 5723,2    -- troggs
-    .complete 5725,1    --cultist drops
+    .complete 5723,2    
+    .complete 5725,1    
     .complete 5725,2
-    .complete 5761,1    -- boss heart
-    .complete 5728,1    --end bosses
+    .complete 5761,1    
+    .complete 5728,1   
     .complete 5728,2
 step
     .goto Orgrimmar,49.6,51.6
@@ -287,27 +262,17 @@ step
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Barrens2
-#next Silverpine1
-
+#name 14-16 Barrens2
+#next 16-18 Silverpine1
 step
     .hs >>hearth to xr
-step << Hunter                              
-    .goto The Barrens,51.6,30.0
-    .collect 2515,2000
-    -- .buy "Buy arrows",2515,2000      --cannot get autobuy to work
-    .target Barg
-step 
-    .goto The Barrens,51.21,29.05
-    .vendor >>vendor trash and repair
-    .target Jahan Hawkwing
 step
     .goto The Barrens,52.0,31.6
     .accept 4921
     .target Mankrik
 step 
     .goto The Barrens,53.17,41.76          
-    .complete 851,1 >> kill and loot turtles/mushroom while waiting for spawn, kill kolkar to spawn 
+    .complete 851,1 >> 1 or 2 can kill and loot turtles while waiting for spawn,rest kill kolkar to spawn 
     .unitscan Verog the Dervish
 step
     .goto The Barrens,45.4,28.4
@@ -316,7 +281,7 @@ step
     .target Regthar Deathgate
 step
     .goto The Barrens,46.1,37.12
-    .complete 852,1 >> kill and loot turtles/mushroom while waiting for spawn/dont be cocky he is lvl 19
+    .complete 852,1 >> kill and loot turtles while waiting for spawn, care he is lvl 19 with 2 adds
     .unitscan Hezrul Bloodmark
 step
     .complete 880,1
@@ -326,6 +291,7 @@ step
     .accept 4021
     .target Regthar Deathgate
 step
+    >> carefully pick off kolkar to spawn the warlord, then loot the banner he drops onto the ground
     .complete 4021,1
     .unitscan Warlord Krom'zar
 step
@@ -338,15 +304,6 @@ step
     .accept 1489
     .accept 3301
     .target Tonga Runetotem                             
-step
-    .goto The Barrens,51.4,30.2                         
-    .turnin -848,1
-    .target Apothecary Helbrim
-step 
-    .isQuestComplete 848                            --todo check if it accepts quest when 848 is complete
-    .accept 853     
-step
-    .abandon 848                                    --rxp function doesn't auto abandon have to manually abandon
 step
     .goto The Barrens,51.6,30.4
     .fly Ratchet
@@ -361,11 +318,11 @@ step
     .target Captain Thalo'thas Brightsun
 step
     .goto The Barrens,62.0,39.4
-    .home >> set hearth
-    .vendor >> sell junk
+    .home >> set hearth, sell junk
     .target Innkeeper Wiley
 step
     .goto The Barrens,62.14,53.54
+    >> can split into 2 grps and still be in range of other towers kills
     .complete 891,1
     .complete 891,2
     .complete 891,3
@@ -378,7 +335,7 @@ step
     .goto The Barrens,49.33,50.32
     .complete 4921,1
 step
-    .goto The Barrens,46.4,73.9          --sleeping bag quest
+    .goto The Barrens,46.4,73.9 
     .accept 79007
 step
     .goto The Barrens,44.4,59.0
@@ -410,11 +367,10 @@ step
 step 
     .goto Thunder Bluff,23.0,21.0
     .accept 962 >> also in cave
-    .turnin -853,1                         --should only be a step if quest is complete in log
+    .turnin -853,1
     .target Apothecary Zamah
 step
     .hs >> hearth to Ratchet, fly if on cd 
-    .vendor
     .target Innkeeper Wiley
 step
     .goto The Barrens,62.2,39.0
@@ -436,34 +392,34 @@ step
 step
     .goto The Barrens,52.0,31.6
     .turnin 4921
+    .accept 899
     .target Mankrik
 step 
     .goto The Barrens,51.93,30.32
     .turnin 869 
     .target Gazrog
-step
-    .goto The Barrens,51.6,30.4
-    .fly Orgrimmar
-    .target Devrak
-
 ]])
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Silverpine1
-#next ROL
-
+#name 16-18 Silverpine1
+#next 18-20 ROL
+step
+    .goto The Barrens,51.6,30.4
+    .fly Orgrimmar
+    .target Devrak
 step
     >> take south zep to UC
     .goto Tirisfal Glades,61.4,53.4
     .accept 96895 
     .target Deathguard Terrence
 step
-    .goto Tirisfal Glades,65.8,61.0                 -- todo do something about loot quest(only 1 person rly should pick it up)
+    .goto Tirisfal Glades,65.8,61.0
     .turnin 96895
     .accept 96897
     .target Hadric Harlson
 step
+    >> lowest xp can also pick up the loot quest "Remnants of War" from Hadric Harlson as well, only 1 person
     .complete 96897,1
     .complete 96897,2
 step
@@ -499,7 +455,7 @@ step
     >> in the crypts
     .target High Executor Hadrec
 step
-    .goto Silverpine Forest,44.0,41.0                       -- accept berens peril(516) later we might not meet lvl req yet
+    .goto Silverpine Forest,44.0,41.0 
     .accept 477
     .target Shadow Priest Allister
 step
@@ -543,7 +499,7 @@ step
     .accept 440
     .target High Executor Hadrec
 step
-    .goto Silverpine Forest,            --get coords of fork in road before keep
+    .goto Silverpine Forest,65.8,27.4
     .complete 443,1
 step
     .itemcount 3317,1
@@ -573,11 +529,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name ROL
-#next Stonetalon
-
--- need to make uc step to turn in wand if player has it
---need to turn in and accept follow up of 441, do it as first
+#name 18-20 ROL
+#next 20-21 Stonetalon
 step
     .goto Undercity,58.2,55.2               
     .accept 97891
@@ -697,17 +650,16 @@ step
     .target Hragran
 step 
     .goto Westfall,37.5,50.7
+    >>swim thru water north to westfall
     .turnin 79007
-    .accept 79192 >>swim thru water north to westfall
-
+    .accept 79192
 ]])
 
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Stonetalon
-#next WC
-
+#name 20-21 Stonetalon
+#next 21-22 WC
 step
     .hs >> hearth
     .goto The Barrens,62.6,37.5
@@ -746,7 +698,7 @@ step
     .accept 6548
     .target Makaba Flathoof
 step
-    .goto Stonetalon Mountains,81.2,90.6                --check might wanna adjust arrow
+    .goto Stonetalon Mountains,81.2,90.6
     .complete 6548,1
     .complete 6548,2
 step
@@ -831,8 +783,6 @@ step
     .goto Stonetalon Mountains,47.2,64.2
     .accept 6562
     .target Tsunaman
-
--- can maybe add boulderslide ravine and earthen arise, if we need more xp
 step
     .goto Stonetalon Mountains,71.2,94.8
     .turnin 6461
@@ -843,18 +793,12 @@ step
     .accept 1068
     .accept 1063
     .target Seereth Stonebreak
-
-
 ]])
-
-
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name WC       
-#next SFK
-
-
+#name 21-22 WC       
+#next 22-23 Barrens3
 step
     .goto The Barrens,45.7,35.1
     .accept 1486
@@ -866,7 +810,7 @@ step
     .vendor >> sell junk
     .target Kalldan Felmoon
 step
-    >> run WC make sure you are looting everything possible for quests!
+    >> run WC, only 2 people keep serpentbloom and deviate hides rest abandon
     .complete 959,1
     .complete 1487,1
     .complete 1487,2
@@ -880,8 +824,10 @@ step
     .complete 1486,1
     .complete 1491,1           
     .accept 6981
-    >> will have to reset and farm beginning loop for hides and serpentbloom, look for Mad Magglish when resetting
+    >> don't wait forever on mad magglish, if you can see his corpse skip the quest
     .target Mad Magglish
+    >> hearth from end of instance if 2 people are done with hides and serpentbloom, and everyone is done with essence
+    >> can do 1 quick reset to grab last little bit of loot
 step
     .hs >>hearth 
     .vendor
@@ -944,7 +890,7 @@ step
 step
     .goto Thunder Bluff,70.2,30.8
     .turnin 1063
-    >> wait a couple of seconds for rp
+    >> wait a couple of seconds for rp, make sure to grab forsaken aid
     .accept 1064
     .target Magatha Grimtotem
 step
@@ -962,18 +908,135 @@ step
     .accept 1065
     .target Apothecary Zamah
 step
-    .goto Thunder Bluff,46.8,50.0
-    .fly Orgrimmar
+    .goto Thunder Bluff,46.8,50.0       
+    .fly Camp Taurajo
     .target Tal    
---train 
 ]])
+
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name SFK     
-#next Hillsbrad1
-
+#name 22-23 Barrens3
+#next 23-24 SFK
+step
+    .goto The Barrens,44.6,59.2
+    .accept 878
+    .target Mangletooth
+step    
+    >> keep an eye out for Lakota'mani (grey kodo) kill him if you see him
+    >> only 1 or 2 people should have consumed by hatred, rest abandon
+    >> everyone needs 1 blood shard (tradeable)
+    .complete 878,1
+    .complete 878,2
+    .complete 878,3
+step
+    .itemcount 5099,1
+    .use 5099
+    .accept 883
+step
+    .goto The Barrens,44.8,59.0
+    .turnin -883,1
+    .target Jorn Skyseer
+step
+    .goto The Barrens,44.6,59.2
+    .turnin 878
+    .accept 5052
+    .turnin 5052
+step
+    .itemcount 5075,10
+    .accept 889
+    .turnin 889
+step
+    .accept 879
+    .target Mangletooth
+step
+    .accept 97250
+    .target Grunt Logmar
+step
+    >> look out for Owatanka (blue thunder kodo) kill him if you see him        --accept and turnin if you ahve item
+    .goto The Barrens,47.8,77.6
+    .accept 98093
+    .target Sulhasa
+step
+    .goto The Barrens,48.8,77.6
+    >> 6-8 min respawn need an aoe tag to camp spawn, quest requires tag on all 3 mobs, non instant aoe classes work on completing "Field to Clear" quest
+    .complete 97250,1
+    .complete 97250,2
+step
+    .goto The Barrens,46.1,75.6
+    >> follow road south looking for patrolling quest giver
+    .accept 843
+    .target Gann Stonespire
+step
+    .goto The Barrens,44.0,81.6
+    >>Kuz will path around the area 
+    .complete 879,1
+    .unitscan Kuz
+step
+    .goto The Barrens,40.0,80.4
+    .complete 879,3
+step
+    .goto The Barrens,43.6,83.6
+    .complete 879,2
+step
+    .goto The Barrens,46.3,85.0
+    .complete 843,1
+    .complete 843,2
+    .complete 843,3
+    >> focus on tagging foreman's
+step
+    >> find gann patrolling the road again
+    .turnin 843
+    .target Gann Stonespire
+step
+    .complete 98093,1
+    .complete 98093,2
+step
+    .goto The Barrens,47.8,77.6
+    .turnin 98093
+    .target Sulhasa
+step
+    .itemcount 5102,1
+    .use 5102
+    .accept 884
+step
+    .goto The Barrens,44.6,59.2
+    .turnin 97250
+    .target Grunt Logmar
+step
+    .turnin -884,1
+    .target Jorn Skyseer
+step
+    .turnin 879
+    .accept 906
+    .target Mangletooth
+step
+    >> fly to XR (can hearth if off cd)
+    .goto The Barrens,44.4,59.0
+    .fly Crossroads
+    .target Omusa Thunderhorn   
 step 
+    .goto The Barrens,51.4,30.8
+    .turnin 906
+    .accept 6541
+    .target Thork
+step
+    .goto The Barrens,52.0,31.6
+    .turnin -899,1
+    .target Mankrik
+]])
+
+
+RXPGuides.RegisterGuide([[
+#group GMA
+#name 23-24 SFK     
+#next 24-25 Hillsbrad1
+step
+    .goto The Barrens,51.5,30.34
+    .fly Orgrimmar
+    .target Devrak
+step 
+    >> take zep to UC and fly to Sepulcher
     .goto Undercity,63.6,48.6       
     .fly Sepulcher
     .target Michael Garrett
@@ -995,7 +1058,7 @@ step
     .goto Silverpine Forest,43.4,40.8
     .turnin 448
     .accept 1098
-    .target High executor Hadrec                -- can maybe add in the kill thule quest, but it's a single quest to go through a hyper spawn, and kill a crowded elite, for 2k exp skip if we dont rly need xp
+    .target High executor Hadrec               
 step
     .goto Silverpine Forest,44.4,43.0
     .turnin 92401
@@ -1010,7 +1073,7 @@ step
 step   
     .goto Silverpine Forest,45.4,83.4
     .complete 530,1
-    .unitscan Valdred Moray                     --todo test respawn rate, maybe cut if >2mins
+    .unitscan Valdred Moray
 step
     .goto Silverpine Forest,60.3,74.7
     >> farm undead for note scrap
@@ -1047,31 +1110,19 @@ step
     .goto Hillsbrad Foothills,60.2,18.6
     .fp Tarren Mill
     .target Zarise
-
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Hillsbrad1  
-#next Barrens3
-
-
+#name 24-25 Hillsbrad1                                                  
+#next 25 Stonetalon2
 step                                     
     .goto Hillsbrad Foothills,61.4,19.2
     .turnin 1065
     .turnin 493
     .accept 1066
+    .accept 509
     .target Apothecary Lydon
-step
-    .goto Hillsbrad Foothills,62.2,20.2
-    .turnin 494
-    .accept 527                         -- might just be a skip
-    .target High Executor Darthalia
-step
-    .goto Hillsbrad Foothills,62.5,19.7
-    .accept 567
-    >> accept Dangerous! from a wanted posted
 step 
     .goto Hillsbrad Foothills,63.2,20.6
     .accept 498
@@ -1081,24 +1132,7 @@ step
     .accept 549
     >> accept Wanted: Syndicate Personnel from a wanted poster
 step
-    .goto Hillsbrad Foothills,34.0,36.6
-    .complete 527,1
-    .complete 527,2
-    .complete 527,3
-    .complete 527,4
-    .unitscan Farmer Ray
-    .unitscan Farmer Getz
-step
-    .goto Hillsbrad Foothills,62.2,20.2
-    .turnin 527
-    .accept 528
-    .target High Executor Darthalia
-step
-    .goto Hillsbrad Foothills,62.0,19.8
-    .accept 546
-    .target Deathguard Samas
-step
-    .goto Hillsbrad Foothills,    --todo get coords of entrance to syndicate keep       
+    .goto Hillsbrad Foothills,76.7,46.3    
     .complete 549,1
     .complete 549,2
     .complete 498,1
@@ -1106,6 +1140,9 @@ step
     .complete 1066,1
     .unitscan Jailor Marlgen
     .unitscan Jailor Eston
+step
+    .goto Hillsbrad Foothills,64.4,61.4
+    .complete 509,1
 step
     .goto Hillsbrad Foothills,62.2,20.2
     .turnin 549
@@ -1116,10 +1153,15 @@ step
     .target Krusk
 step
     .goto Hillsbrad Foothills,61.4,19.2
+    .turnin 509
     .turnin 1066
     >>wait a sec for rp
     .accept 1067
+    .accept 513
     .target Apothecary Lydon
+step
+    >> at least one person needs to be lvl 24 and 11,750/31700
+    .xp 11750/31700,25
 step
     .goto Hillsbrad Foothills,60.2,18.6
     .fly Sepulcher
@@ -1145,136 +1187,22 @@ step
     .goto Undercity,53.6,54.0
     .turnin 1013
     .target Keeper Bel'dugur
-
+step
+    .goto Undercity,48.4,69.4
+    .turnin 513
+    .target Master Apothecary Faranell
+step
+    .goto Undercity,49.2,70.4
+    .accept 97985
+    .target Calder Gray
 ]])
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Barrens3
-#next Stonetalon2
-
-
+#name 25 Stonetalon2
+#next 25-28 Ashenvale+BFD
 step
-    .hs >>hearth to xr
-    .goto The Barrens,51.5,30.34
-    .fly Camp Taurajo                   -- maybe set hearth here as well
-    .target Devrak
-step
-    .goto The Barrens,44.6,59.2
-    .accept 878
-    .target Mangletooth
-step    
-    >> keep an eye out for Lakota'mani (grey kodo) kill him if you see him
-    .complete 878,1
-    .complete 878,2
-    .complete 878,3
-step
-    .itemcount 5099,1
-    .use 5099
-    .accept 883
-step
-    .goto The Barrens,44.8,59.0
-    .turnin -883,1
-    .target Jorn Skyseer
-step
-    .goto The Barrens,44.6,59.2
-    .turnin 878
-    .accept 5052
-    .turnin 5052
-step
-    .itemcount 5075,10
-    .accept 889
-    .turnin 889
-step
-    .accept 879
-    .target Mangletooth
-step
-    .accept 97250
-    .target Grunt Logmar
-step
-    .goto The Barrens,45.6,59.0
-    .home >>set hearth
-    .target Innkeeper Byula
-step
-    >> look out for Owatanka (blue thunder kodo) kill him if you see him        --accept and turnin if you ahve item
-    .goto The Barrens,47.8,77.6
-    .accept 98093
-    .target Sulhasa
-step
-    .goto The Barrens,48.8,77.6
-    .complete 97250,1
-    .complete 97250,2
-step
-    .goto The Barrens,46.1,75.6
-    >> follow road south looking for patrolling quest giver
-    .accept 843
-    .target Gann Stonespire
-step
-    .goto The Barrens,44.0,81.6
-    >>Kuz will path around the area 
-    .complete 879,1
-    .unitscan Kuz
-step
-    .goto The Barrens,40.0,80.4
-    .complete 879,3
-step
-    .goto The Barrens,43.6,83.6
-    .complete 879,2
-step
-    .goto The Barrens,46.3,85.0
-    .complete 843,1
-    .complete 843,2
-    .complete 843,3
-    >> focus on foreman's
-step
-    >> find gann patrolling the road again
-    .turnin 843
-    .target Gann Stonespire
-step
-    --maybe add goto
-    .complete 98093,1
-    .complete 98093,2
-step
-    .goto The Barrens,47.8,77.6
-    .turnin 98093
-    .target Sulhasa
-step
-    .itemcount 5102,1
-    .use 5102
-    .accept 884
-step
-    .hs >> hearth if off cd
-    .goto The Barrens,44.6,59.2
-    .turnin 97250
-    .target Grunt Logmar
-step
-    .turnin -884,1
-    .target Jorn Skyseer
-step
-    .turnin 879
-    .accept 906
-    .target Mangletooth
-step
-    .itemcount 5075,10
-    .accept 889
-    .turnin 889
-step
-    .goto The Barrens,44.4,59.0
-    .fly Crossroads
-    .target Omusa Thunderhorn   
-step -- turnin from within 906
-    .goto The Barrens,51.4,30.8
-    .turnin 906
-    .accept 6541
-    .target Thork
-]])
-
-RXPGuides.RegisterGuide([[
-#group GMA
-#name Stonetalon2
-#next Ashenvale+BFD
-
-step
+    .hs >> hearth to XR
     .goto The Barrens,51.5,30.34
     .fly Stonetalon Mountains
     .target Devrak   
@@ -1303,6 +1231,7 @@ step
     .complete 6282,2
     .complete 6282,3
     .complete 6282,4
+    >> turnin kill quest once done you will come back and finish the loot quest
 step
     .goto Stonetalon Mountains,46.0,60.4
     .turnin 1087
@@ -1333,13 +1262,10 @@ step
     .target Tharm
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Ashenvale+BFD   -- left side first?
-#next TK1
-
-
+#name 25-28 Ashenvale+BFD
+#next 28-29 TK1
 step
     .goto The Barrens,48.0,5.4 
     .turnin 6541
@@ -1361,7 +1287,7 @@ step
     .target Senani Thunderheart
 step
     .goto Ashenvale,74.0,60.6
-    .home >>set hearth
+    .home >> set hearth to Splintertree Post
     .target Innkeeper Kaylisk
 step
     .goto Ashenvale,73.6,60.0
@@ -1381,11 +1307,11 @@ step
     .turnin 6547
     .target Warsong Scout
 step
-    .goto Ashenvale,49.0,69.8 --update to gazebo coords
+    .goto Ashenvale,49.0,69.8
     .complete 25,1
     .complete 25,2
     >> kill and loot Tideress
-    .collect 16408,1,1918,1   -- test if works -- needs to stay on step till tideress is looted
+    .collect 16408,1,1918,1
 step
     .use 16408
     .accept 1918
@@ -1489,15 +1415,15 @@ step
     .accept 98252
     .target Va'xug Firefure
 step
-    .goto Ashenvale,42.2,56.9 --the road north
+    .goto Ashenvale,42.2,56.9
     .complete 98252,1
     .turnin 98252
     .target Eye of Kilrogg
 step
-    .goto Ashenvale, --banner place quest
+    .goto Ashenvale,56.6,63.5
     .complete 6621,1
 step
-    .goto Ashenvale, --moonwell
+    .goto Ashenvale,60.2,72.9
     .complete 1195,1
 step
     .goto The Barrens,48.0,5.4
@@ -1572,24 +1498,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name TK1
-#next Stonetalon3
-
-        --todo add in stormheart completion, and add in accepting it into hillsbrad1 post SFK
-
-        --todo have to add in alien egg 4821 it's a 1 min respawn
-
-        --todo check for steelsnap spawn loc and time spawns at kolkar camp after 1 min
-
-
-
-        -- alien egg chain
-        -- accept quest first time in town
-        --complete before kolkar
-        --turnin with kolkar
-        -- follow up serpent wild 4865 is far left do with test of strength steelsnap and other elites
-        
-
+#name 28-29 TK1
+#next 29 Stonetalon3
 step
     .itemcount 5075,10
     .accept 889
@@ -1608,6 +1518,10 @@ step
     .fp Freewind Post
     .target Nyse
 step
+    .goto Thousand Needles,44.6,50.2
+    .accept 4821
+    .target Hagar Lightninghoof
+step
     .goto Thousand Needles,45.6,50.6
     .turnin 4542
     .accept 4841
@@ -1625,6 +1539,10 @@ step
     .goto Thousand Needles,46.0,50.8
     .accept 5147
     >> accept quest from wanted poster
+step
+    .goto Thousand Needles,56.5,50.4
+    .collect 12467,1
+    >> there is another spawn southwest of here, both have 1 min respawn, waddlers get prio on looting
 step
     .goto Thousand Needles,53.8,41.6
     .accept 1149
@@ -1657,8 +1575,13 @@ step
     .accept 5064
     .target Cliffwatcher Longhorn
 step
+    .goto Thousand Needles,44.6,50.2
+    .turnin 4821
+    .accept 4865
+    .target Hagar Lightninghoof
+step
     .goto Thousand Needles,31.8,32.6
-    >> look for a totem pole on the side of the main road, follow the path up
+    >> look for a totem pole on the side of the main road back to the lift, follow the path up
     .complete 5064,1
 step
     .goto Thousand Needles,33.8,39.9
@@ -1670,6 +1593,7 @@ step
     .goto Thousand Needles,38.2,27.0
     .unitscan Arnak Grimtotem
     .complete 5147,1
+    >> only wait around for Arnak Spawn, if escort isn't up skip it
     .accept 4904
     .target Lakota Windsong
 step
@@ -1685,7 +1609,7 @@ step
     .turnin 98070
     .target Jandia
 step
-    .turnin 4904
+    .turnin -4904,1
     .target Thalia Amberhide
 step
     .goto Thousand Needles,45.6,50.6
@@ -1699,12 +1623,16 @@ step
     .target Dorn Plainstalker
 step
     .goto Thousand Needles,25.8,41.6
-    >>Rok'alim spawns towards feralas on the south of TK
+    >> Rok'alim spawns towards feralas on the south of TK
     .complete 1151,1
     .unitscan Rok'Alim the Pounder
     >> also keep an eye out for steelsnap who patrols around west side of TK
     .complete 1131,1
     .unitscan Steelsnap
+step
+    .goto Thousand Needles,21.6,32.2
+    .turnin 4865
+    .target Motega Firemane
 step
     .goto Thousand Needles,21.4,32.4
     .accept 5151
@@ -1722,20 +1650,17 @@ step
     .turnin 1151
     .accept 1152
     .target Dorn Plainstalker
+    >> last opportunity to kill stormheart, patrols in a circle around quest area
 step
     .goto Thousand Needles,45.0,49.2
     .fly Stonetalon Mountains
     .target Nyse    
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Stonetalon3
-#next ESW
-
-    --todo prob not in this section but make sure we pick up https://www.wowhead.com/forever/quest=1049/compendium-of-the-fallen for SM at some point
-
+#name 29 Stonetalon3
+#next 29-30 ESW
 step
     .goto Stonetalon Mountains,46.0,60.4
     .turnin 1088
@@ -1746,16 +1671,13 @@ step
     .accept 1096
     .target Ziz Fizziks
 step
-    .goto Stonetalon Mountains,
+    .goto Stonetalon Mountains,70.6,55.6
     .complete 1068,2
     .unitscan xt:9
 step
-    .goto Stonetalon Mountains,
+    .goto Stonetalon Mountains,70.8,47.4
     .complete 1068,1
     .unitscan xt:4
-step
-    .goto Stonetalon Mounatins, --poison barrel
-    .complete 1086,1
 step
     .goto Stonetalon Mountains,78.6,45.6
     .turnin 1152
@@ -1763,7 +1685,7 @@ step
     .target Braug Dimspirit
 step
     .goto Ashenvale,75.5,74.5
-    >> Inside the cave
+    >> thru cave to Ashenvale then in another cave
     .complete 1154,1
 step
     .goto Stonetalon Mountains,78.6,45.6
@@ -1772,17 +1694,23 @@ step
     .target Braug Dimspirit
 step
     .complete 6627,1
-    >> Neltharion if its a static question, about who became deathwing
+    >> Neltharion if its a question about who became deathwing
     .turnin 6627
     .accept 1159
     .target Braug Dimspirit
 step
     .goto Stonetalon Mountains,63.6,39.6
-    .complete 1096,1   
-    >>die after take rez sickness to travel to quest giver
+    .complete 1096,1
+    .unitscan Gerenzo Wrenchwhistle
+step
+    .goto Stonetalon Mountains,66.0,45.0
+    >> jump off east side
+    .complete 1086,1
+    >> place the Toxic Fogger at the top of the "Airport" next to the plane
+    .use 5638
 step
     .goto Stonetalon Mountains,59.0,62.4
-    .accept 1096
+    .turnin 1096
     .target Ziz Fizziks
 step
     .goto The Barrens,35.2,27.8
@@ -1790,29 +1718,53 @@ step
     .target Seereth Stonebreak
 step
     .goto The Barrens,51.5,30.34
-    .fly Orgrimmar
+    .fly Thunder Bluff
     .target Devrak
 step
-    .goto Orgrimmar,57.4,53.4
-    .accept 95697
-    .target Borstan
+    .goto Thunder Bluff,23.0,21.0
+    .turnin 1086
+    .target Apothecary Zamah
+step
+    .goto Thunder Bluff,61.4,80.6
+    .turnin 1131
+    .accept 1136
+    .target Melor Stonehoof
+step
+    .goto Thunder Bluff,46.8,50.0
+    .fly Orgrimmar
+    .target Tal
 ]])
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name ESW
-#next Hillsbrad2
-
-
+#name 29-30 ESW
+#next 30 COD
 step
-    >>take zepellin to UC
+    .goto Orgrimmar,57.4,53.4
+    .accept 95697
+    .target Borstan
+step
+    >> take zepellin to UC
+    .goto Undercity,57.8,65.0
+    .turnin 1159
+    .accept 1160
+    .target Parqual Fintallas
+step
+    .goto Undercity,49.2,70.4
+    .turnin 97985  
+    .target Calder Gray
+step    
+    .goto Undercity,46.6,74.4
+    .accept 96988
+    .target Doctor Martin Felben     
+step
+    .goto Undercity,64.0,49.4
+    .accept 1164
+    .target Genavie Callow
+step
     .goto Undercity,63.6,48.6       
     .fly Tarren Mill
     .target Michael Garrett
-step
-    .goto Hillsbrad Foothills,61.4,19.2
-    .accept 509
-    .target Apothecary Lydon
 step
     .goto Hillsbrad Foothills,62.6,19.0
     .home >> set hearth
@@ -1857,131 +1809,10 @@ step
     >> you can get onto the wall by jumping on a kart from the hillsbrad side north of the quest turn in
 ]])
 
-
-
-
 RXPGuides.RegisterGuide([[
 #group GMA
-#name Hillsbrad2
-#next COD
-
---decide if we wanna quest here till elite, prob have to so we can hit lvl 30 to grab guano quest from uc and then head to RFK 
-step 
-    .goto Hillsbrad Foothills,35.2,47.6
-    .complete 528,1
-    >> kill any human you see for skulls
-step
-    .goto Hillsbrad Foothills,62.2,20.2
-    .turnin 528
-    .accept 529
-    .accept 98094
-    .target High Executor Darthalia
-step
-    .goto Hillsbrad Foothills,64.0,53.8
-    .turnin 98094
-    .accept 98095
-    .target Deathstalker Masoj
-step
-    .goto Hillsbrad Foothills,65.1,59.9
-    .complete 509,1
-step
-    .goto Hillsbrad Foothills,38.7,94.7
-    >> on top of the hill
-    .use 279395
-    .complete 98095,1
-step
-    .goto Hillsbrad Foothills,32.0,48.0
-    .complete 529,1
-    .complete 529,2
-    .complete 529,3
-step
-    .goto Hillsbrad Foothills,61.4,19.2
-    .turnin 509
-    .accept 513
-    .target Apothecary Lydon
-step
-    .goto Hillsbrad Foothills,62.2,20.2
-    .turnin 529
-    .accept 532
-    .target High Executor Darthalia
-step
-    .goto Hillsbrad Foothills,29.4,42.8
-    .complete 532,1
-    .complete 532,2
-    .complete 532,3
-    .complete 532,4
-    .complete 567,1
-    .complete 567,2
-    .complete 567,4
-step
-    .goto Hillsbrad Foothills,62.2,20.2
-    .turnin 532
-    .accept 539
-    .target High Executor Darthalia   
-step
-    .goto Hillsbrad Foothills,31.0,56.2
-    .complete 539,1
-    .complete 539,2
-    .complete 546,1
-    .complete 567,1
-step
-    .goto Hillsbrad Foothills,62.2,20.2
-    .turnin 539
-    .turnin 567
-    .accept 541
-    .target High Executor Darthalia   
-step
-    .goto Hillsbrad Foothills,62.0,19.8
-    .turnin 546
-    .target Deathguard Samsa
-step
-    .goto Hillsbrad Foothills,62.6,20.2
-    .accept 547
-    .target Deathguard Humbert
-step
-    .goto Hillsbrad Foothills,71.6,30.0
-    >> climb hill from south
-    .use 279395
-    .complete 98095,2
-step
-    .goto Hillsbrad Foothills,74.2,73.5
-    .use 279395
-    .complete 98095,3
-step
-    .goto Hillsbrad Foothills,72.0,80.8
-    .complete 547,1
-    .complete 541,1
-    .complete 541,2
-    .complete 541,3
-    .complete 541,4
-step
-    .goto Hillsbrad Foothills,64.0,53.8
-    .turnin 98095
-    .target Deathstalker Masoj
-step
-    .goto Hillsbrad Foothills,62.6,20.2
-    .turnin 547
-    .target Deathguard Humbert
-step
-    .goto Hillsbrad Foothills,62.2,20.2
-    .turnin 541
-    .accept 550
-    .target High Executor Darthalia
-]])
-
-
-RXPGuides.RegisterGuide([[
-#group GMA
-#name COD
-#next RFK
-
-
--- krusk in tarren mill has a bread crumb to Desolace
-
-step
-    .goto Hillsbrad Foothills,63.8,19.6
-    .accept 552
-    .target Novice Thaivand
+#name 30-31 COD
+#next 31-33 RFK
 step
     .goto Hillsbrad Foothills,62.6,20.6
     .accept 96986
@@ -1992,11 +1823,8 @@ step
     .accept 544
     .target Magus Wordeen Voidglare
 step
-    .goto Hillsbrad Foothills,46.2,31.9
-    .complete 552,1
-step
     .goto Alterac Mountains,17.4,90.1
-    >> 8min respawn time, I hope you're ahead of the curve
+    >> 8 min respawn time
     .complete 93680,1
     .complete 544,1
     .unitscan Dermot
@@ -2007,11 +1835,6 @@ step
     .complete 544,4
     .unitscan Kegan Darkmar
 step
-    .goto Hillsbrad Foothills,63.8,19.6
-    .turnin 552
-    .accept 553
-    .target Novice Thaivand
-step
     .hs >> hearth to tarren mill if up run if not
     .goto Hillsbrad Foothills,61.6, 20.8
     .turnin 93680
@@ -2019,22 +1842,13 @@ step
     .accept 545
     .target Magus Wordeen Voidglare
 step
-    .goto Hillsbrad Foothills,43.9,28.1
-    .complete 553,1
-step
-    .goto Hillsbrad Foothills,44.1,26.5
-    .complete 553,2
-step
-    .goto Alterac Mountains,37.5,66.2
-    .complete 553,3
+    >> kill a mountian lion on your way here and loot a fresh carcass to summon frostmaw
+    .goto Alterac Mountains,37.6,68.6
+    .complete 1136,1
 step
     .goto Alterac Mountains,26.2,59.9
     .complete 545,1
     .complete 545,2
-step
-    .goto Hillsbrad Foothills,52.8,53.3
-    .turnin 553
-    >> run in from river, good time to swiftness pot after turnin
 step
     .goto Hillsbrad Foothills,61.6,20.8
     .turnin 545
@@ -2042,39 +1856,8 @@ step
     .target Magus Wordeen Voidglare
 step
     .goto Hillsbrad Foothills,60.2,18.6
-    .fly Undercity
+    .fly Sepulcher 
     .target Zarise
--- could add in stormheart pick up to do in TK2
-step  
-    .goto Undercity,57.8,65.0            --test of lore
-    .turnin 1159
-    .accept 1160
-    .target Parqual Fintallas
-step
-    .goto Undercity,56.2,92.6           --battle of hillsbrad
-    .turnin 550
-    .target Varimathras
-step
-    .goto Undercity,48.4,69.4               --elixir of agony turnin/going going guano pickup
-    .turnin 513
-    .accept 1109
-    .target Master Apothecary Faranell
-step
-    .goto Undercity,49.2,70.4
-    .accept 97985                           --todo complete stormheart in TK
-    .target Calder Gray
-step
-    .goto Undercity,46.6,74.4                --COD quest source of power
-    .accept 96988
-    .target Doctor Martin Felben
-step
-    .goto Undercity,64.0,49.4               -- good to grab in case we end up in arathi-- should grab ogre quest from tarren mill too
-    .accept 1164
-    .target Genavie Callow
-step
-    .goto Undercity,63.6,48.6       
-    .fly Sepulcher
-    .target Michael Garrett
 step
     .goto Silverpine Foothills,68.6,45.2
     .turnin 92434
@@ -2107,28 +1890,20 @@ step
     .goto Silverpine Forest,45.6,42.4
     .fly Undercity
     .target Karos Razok
-
-
-
-    --could delay below step till after RFK rewards are meh, and saves run time
-    --would be fly to undercity and then zep to Org
 step
     .goto Undercity,46.6,74.4
     .turnin 96988
     .target Doctor Martin Felben
-
 ]])
 
 
 RXPGuides.RegisterGuide([[
 #group GMA
-#name RFK
-#next STV
-
-
-
--- zep to org
-    --turn in ESW org quest
+#name 31-33 RFK
+step
+    .goto Undercity,48.4,69.4
+    .accept 1109
+    .target Master Apothecary Faranell
 step
     >>zep to org
     .goto Orgrimmar,57.4,53.4
@@ -2144,7 +1919,7 @@ step
     >> loot tools next to him
     .collect 5880,1
     .collect 5897,1
-    .collect 6684
+    .collect 6684,1
     .target Mebok Mizzyrix
 step
     .goto The Barrens,63.0,37.2 
@@ -2161,8 +1936,7 @@ step
     .target Auld Stonespire
 step
     .goto Thunder Bluff,61.4,80.6
-    .turnin 1131
-    .accept 1136
+    .turnin 1136
     .target Melor Stonehoof
 step
     .goto Thunder Bluff,70.8,33.8
@@ -2170,47 +1944,40 @@ step
     .accept 98823
     .target Bashana Runetotem
 step
-    >> in the cave
-    .goto Thunder Bluff,23.0,21.0
-    .turnin 1086
-    .target Apothecary Zamah
-step
     >> follow path up the mountain from arrow
     .goto Mulgore,40.1,17.4
     .turnin 98823
     .accept 96259
-    .accept 96261
     .target Muln Earthfury
 step
     .goto Mulgore,32.4,20.6
     .accept 96774
     .target Mazu'kon
 step
+    >> lowest xp can pick up the 2 loot quests, can share with 1 more if they complete quickly
+    .goto Mulgore,33.4,7.2
+    .complete 96259,1
+    .complete 96259,2
+step
+    .goto Mulgore,33.4,22.4
+    .turnin 96259
+    .accept 96261
+    .target Muln Earthfury
+step
     .goto Mulgore,33.4,7.2
     .complete 96261,1
     .collect 273658,1
     .use 273658
     .accept 96294
-    .complete 96259,1
-    .complete 96259,2
 step
     .goto Mulgore,33.4,22.4
     .turnin 96261
     .turnin 96294
-    .turnin 96259
     .target Muln Earthfury
 step
-    .goto Desolace,25.0,72.2
-    .accept 5763
-    .target Roon Wildmane
-step
-    .goto Desolace,21.6,74.0
-    .fp Shadowprey Village
+    .goto Thunder Bluff,46.8,50.0
     .fly Camp Taurajo
-    .target Thalon                  -- could look into picking up some quest in desolace to enter desolace from stonetalon for better pathing --kinda likley we just skip the zone 
-                                        -- still need fp for mara times, look into maraudon prequest's
-                                    --todo
-                                        -- for sure pick up bread crumb from tarren mill to go to desolace
+    .target Tal
 step
     >>Run RFK
     .complete 1221,1
@@ -2222,11 +1989,31 @@ step
     .accept 1144
     .complete 1144,1
     .turnin 1144
-    -- could ask if we wanna do escort 7k exp even for 10 min is 42k xp an hour, seems great at lvl 30
-step                                --could do dustwallow marsh maybe? to get fp
-    .goto The Barrens,44.4,59.0
-    .fly Freewind Post
-    .target Omusa Thunderhorn
+step
+    .goto Dustwallow Marsh,29.7,47.7
+    .accept 1268
+step
+    .goto Dustwallow Marsh,29.8,48.2
+    .accept 1269
+step
+    .goto Dustwallow Marsh,29.6,48.5
+    .accept 1251
+step
+    .goto Dustwallow Marsh,36.4,31.8
+    .turnin 1268
+    .turnin 1269
+    .turnin 1251
+    .accept 1321
+    .target Krog
+step
+    .goto Dustwallow Marsh,36.4,30.8
+    .turnin 1321
+    .target Do'gol
+step
+    .goto Dustwallow Marsh,35.6,31.8
+    .fp Brackenwall Village
+    .fly Freewind post
+    .target Shardi
 step
     .goto Thousand Needles,77.8,77.2
     .accept 1111
@@ -2252,75 +2039,7 @@ step
 step
     .goto The Barrens,63.2,38.4
     .turnin 1111
-    .accept 1112
-    .target Wharfmaster Dizzywig        --todo bank kravel's parts, can take them out of bank in gadgetzan when turning in quest
+    .target Wharfmaster Dizzywig
+step
+    >> take boat to STV enjoy new quests/content
 ]])                                 
-
-RXPGuides.RegisterGuide([[
-#group GMA
-#name STV
-#next SM
-
-step --could just call it here, hard to predict how much exp we're going to need how much competition we're going to be facing, if there is new quests that require >lvl30 to see/accept
-    >> take boat from Ratchet to Booty Bay       -- pick up first quest off of boat
-    .goto Stranglethorn Vale,27.0,77.2
-    .accept 201
-    .target Krazek
-step
-    .goto Stranglethorn Vale,26.8,77.0
-    .fp Booty Bay
-    .fly Grom'gol
-    .target Gringer
-step
-    .goto Stranglethorn Vale,32.2,27.8       --accept quest in grom gol
-    .accept 629
-    .target Kin
-
-
-    -- vile reef tablet quest from grom'gol
--- nesingwary camp stuff
-
-
-
-
---RFK -> STV -> SM GY/Lib run -> 
-
-                        --end boss lvl
---SM gy                 34
---SM lib                37  
---SM arm                40          -- I think arm and cath are a skip since only 1 low budget quest def skip if not gonna ding 38 before cath end boss 
---SM cath               42          -- could maybe push to 37 but thats -5 behind double 5 man elites
---RFD                   41   
-    --quests Bring the End from undercity req lvl37
-    -- unholy alliance follow up from RFK quest in undercity
-    -- a host of evil from Myriam Moonsinger in the barrens,49,94.8
-    -- two inside for escort -- MAKE SURE AUTO ACCEPT/COMPLETE IS OFF!
-
---ULD                   47
-    --quests   UC https://www.wowhead.com/forever/quest=2342/reclaimed-treasures
-    -- ORG https://www.wowhead.com/forever/quest=2283/necklace-recovery         also drops without quest accepted
-    --central badlands https://www.wowhead.com/forever/quest=2418/power-stones
-    --south badlands https://www.wowhead.com/forever/quest=709/solution-to-doom
-    --in instance https://www.wowhead.com/forever/quest=2278/the-platinum-discs
---DC                    ?? who knows new content
---ZF                    48
---Mara                  51
---Sunken Temple         55
---BRD                   59
---LBRS                  ??
-
-
-
---zones to prog through
---STV low 30's and again at 40 ish
---Desolace maybe mid 30's
---Riverglades should be 35-45
---Dustwallow marsh              -- could add the run into dustwallow marsh to post RFC? if lvl 32
-
-
-
-
-
-
-
-]])
